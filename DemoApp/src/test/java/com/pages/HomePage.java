@@ -13,6 +13,10 @@ public class HomePage {
 	
 	public By departureAirportTxt = By.name("Departure airport");
 	
+	
+	public By searchResultList = By.xpath("//div[@class='ts-fbr-option__price-detail']//strong[@class='ts-fbr-option__price']");
+
+				
 	public By departureAirportList = By.xpath("//a[contains(@aria-label,'Dubai International Airport (DXB), Dubai, United Arab Emirates')]");
 	
 	
@@ -24,13 +28,22 @@ public class HomePage {
 	public By continueBtn = By.xpath("//a[contains(@class,'cta cta--large cta--primary js-continue-search-flight search-flight__continue--cta')]");
 	
 	
-	public By datePicker = By.name("search-flight-date-picker--depart");
+	public By datePicker = By.id("search-flight-date-picker--depart");
 	
-	public By selectTravelDate = By.xpath("//a[@data-string='13  May 18']");
 	
-	public By selectReturnDate = By.xpath("//a[@data-string='20  May 18']");
 	
-	public By searchFlightsBtn = By.xpath("//span[text()='Search flights']");
+	public By selectTravelDate(String date){
+		 By selectTravelDate = By.xpath("//a[@aria-label="+"'"+date+"'"+"]");
+		return selectTravelDate;
+	}
+	
+	public By selectReturnDate(String date){
+		 By selectReturnDate = By.xpath("//a[@aria-label="+"'"+date+"'"+"]");
+		return selectReturnDate;
+	}
+	
+	
+	public By searchFlightsBtn = By.xpath("//button/span[text()='Search flights']");
 	
 	
 }
